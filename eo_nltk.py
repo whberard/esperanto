@@ -12,13 +12,13 @@ from nltk.corpus import udhr
 
 from bs4 import BeautifulSoup
 
-myfile = open("./tekstaro-de-esperanto/tekstoj-xml/gerda-malaperis.xml")
+myfile = open("./tekstaro-de-esperanto/tekstoj-xml/la-faraono.xml")
 raw_text = myfile.read()
 #print raw_text[0:200]
 raw = BeautifulSoup(raw_text, "html.parser").get_text()
 
 
-print type(raw)
+# print type(raw)
 tokens = word_tokenize(raw)
 
 print "Num tokens = ", len(tokens)
@@ -30,3 +30,5 @@ text = nltk.Text(tokens)
 print type(text)
 
 text.collocations()
+text.concordance(u'sankteco')
+text.similar(u'soldato')
