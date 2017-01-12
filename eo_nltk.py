@@ -1,5 +1,5 @@
 
-import nltk, re, pprint
+import nltk
 from nltk import word_tokenize
 from nltk.corpus import udhr
 
@@ -30,5 +30,10 @@ text = nltk.Text(tokens)
 print type(text)
 
 text.collocations()
-text.concordance(u'sankteco')
+#text.concordance(u'sankteco')
 text.similar(u'soldato')
+
+sortwds = sorted(set(text))
+print sortwds[0:20]
+
+
